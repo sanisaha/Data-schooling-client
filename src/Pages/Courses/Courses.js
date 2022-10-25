@@ -1,11 +1,24 @@
-import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import Row from 'react-bootstrap/Row';
+import CourseCard from '../Shared/CourseCard/CourseCard';
 
 const Courses = () => {
-    const courses = useLoaderData();
+    const [courses, setCourses] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:5000/courses')
+            .then(res => res.json())
+            .then(data => setCourses(data))
+    }, [])
     return (
         <div>
-            <h2>This is course</h2>
+            <h2>This is course {courses.length}</h2>
+            <Row xs={1} md={1} className="g-4">
+                {courses.map(course => <CourseCard
+                    key={course.id}
+                    course={course}
+                ></CourseCard>)}
+            </Row>
         </div>
     );
 };

@@ -11,10 +11,10 @@ const CourseLayout = () => {
             <Header></Header>
             <Container>
                 <Row>
-                    <Col lg="4" className='d-none d-lg-block'>
+                    <Col lg="3" className='d-none d-lg-block'>
                         <LeftSideNav></LeftSideNav>
                     </Col>
-                    <Col lg="8">
+                    <Col lg="9">
                         <Outlet></Outlet>
                     </Col>
                 </Row>
