@@ -36,11 +36,7 @@ const Header = () => {
                             <Nav><Link className='text-decoration-none' onClick={handleToggle}>{condition}</Link></Nav>
 
                         </Nav>
-                        <Nav>
-                            <><Link to='/login'>login</Link></>
-                            <><Link to='/register'>register</Link></>
-
-                        </Nav>
+                        <Nav><Link className='text-decoration-none me-4 fs-4' to='/login'>Login</Link></Nav>
                     </Navbar.Collapse>
                 </Container>
             </Navbar>

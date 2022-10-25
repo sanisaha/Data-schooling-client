@@ -3,6 +3,7 @@ import React from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Login from '../../Credentials/Login';
 import Register from '../../Credentials/Register';
+import CourseLayout from '../../Layout/CourseLayout/CourseLayout';
 import Main from '../../Layout/Main/Main';
 import Blog from '../../Pages/Blog/Blog';
 import Courses from '../../Pages/Courses/Courses';
@@ -18,10 +19,6 @@ export const routes = createBrowserRouter([
                 path: '/',
                 element: <Home></Home>,
                 loader: () => fetch('http://localhost:5000/courses')
-            },
-            {
-                path: '/courses',
-                element: <Courses></Courses>
             },
 
             {
@@ -39,6 +36,17 @@ export const routes = createBrowserRouter([
             {
                 path: '/register',
                 element: <Register></Register>
+            }
+        ]
+    },
+    {
+        path: '/courses',
+        element: <CourseLayout></CourseLayout>,
+        children: [
+            {
+                path: '/courses',
+                element: <Courses></Courses>,
+                Loader: () => fetch('http://localhost:5000/courses')
             }
         ]
     }
