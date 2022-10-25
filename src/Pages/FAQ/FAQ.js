@@ -1,9 +1,10 @@
 import React from 'react';
+import './FAQ.css'
 
 const FAQ = () => {
     return (
-        <div>
-            <h2>This is faq</h2>
+        <div className="bg">
+
         </div>
     );
 };

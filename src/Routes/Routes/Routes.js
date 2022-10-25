@@ -1,3 +1,4 @@
+import { Carousel } from 'bootstrap';
 import React from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Login from '../../Credentials/Login';
@@ -15,12 +16,14 @@ export const routes = createBrowserRouter([
         children: [
             {
                 path: '/',
-                element: <Home></Home>
+                element: <Home></Home>,
+                loader: () => fetch('http://localhost:5000/courses')
             },
             {
                 path: '/courses',
                 element: <Courses></Courses>
             },
+
             {
                 path: '/faq',
                 element: <FAQ></FAQ>

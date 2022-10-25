@@ -1,0 +1,6 @@
+.bg-pic {
+    background-image: url("/src/assets/images/dataScience.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
