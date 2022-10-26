@@ -9,6 +9,7 @@ import Blog from '../../Pages/Blog/Blog';
 import Courses from '../../Pages/Courses/Courses';
 import FAQ from '../../Pages/FAQ/FAQ';
 import Home from '../../Pages/Home/Home';
+import CourseDetailCard from '../../Pages/Shared/CourseDetailCard/CourseDetailCard';
 
 export const routes = createBrowserRouter([
     {
@@ -47,6 +48,11 @@ export const routes = createBrowserRouter([
                 path: '/courses',
                 element: <Courses></Courses>,
                 Loader: () => fetch('http://localhost:5000/courses')
+            },
+            {
+                path: '/courses/:id',
+                element: <CourseDetailCard></CourseDetailCard>,
+                loader: ({ params }) => fetch(`http://localhost:5000/courses/${params.id}`)
             }
         ]
     }
