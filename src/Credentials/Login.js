@@ -2,16 +2,18 @@ import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext } from 'react';
 import { AuthContext } from '../Context/AuthProvider/AuthProvider';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Login = () => {
     const { providerLogin, signIn } = useContext(AuthContext);
     const gitHubProvider = new GithubAuthProvider();
     const googleProvider = new GoogleAuthProvider();
+    const navigate = useNavigate();
     const handleGithubSignIn = () => {
         providerLogin(gitHubProvider)
             .then(result => {
                 const user = result.user;
+                navigate('/')
             })
             .catch(error => console.error(error))
     }
@@ -19,6 +21,7 @@ const Login = () => {
         providerLogin(googleProvider)
             .then(result => {
                 const user = result.user;
+                navigate('/')
             })
             .catch(error => console.error(error))
     }
@@ -31,6 +34,7 @@ const Login = () => {
             .then((result) => {
                 const user = result.user;
                 form.reset();
+                navigate('/')
             })
             .catch(e => console.error(e))
     }
