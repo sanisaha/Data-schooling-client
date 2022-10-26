@@ -12,13 +12,16 @@ import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
 
 const Header = () => {
     const [condition, setCondition] = useState('Dark');
-    const { user } = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
     const handleToggle = () => {
         if (condition === 'Light') {
             setCondition('Dark');
         } else {
             setCondition('Light');
         }
+    }
+    const handleLogOut = () => {
+        logOut();
     }
     return (
         <div >
@@ -39,7 +42,7 @@ const Header = () => {
                             <Nav><Link className='text-decoration-none' onClick={handleToggle}>{condition}</Link></Nav>
 
                         </Nav>
-                        <Nav className='text-black'>
+                        <Nav className='text-black me-4'>
                             <>
                                 {
                                     user?.uid ?
@@ -52,9 +55,18 @@ const Header = () => {
                                         ></Image>
                                         </>
                                         :
-                                        <><Link className='text-decoration-none fs-4' to='/login'>Log In</Link></>
+                                        <><Link className='text-decoration-none fs-4' to='/login'>Login</Link></>
                                 }
                             </>
+                        </Nav>
+                        <Nav>
+                            <>
+                                {
+                                    user?.uid ?
+                                        <Link className='text-decoration-none fs-4' onClick={handleLogOut}>Logout</Link>
+                                        :
+                                        <Link className='text-decoration-none d-none fs-4' onClick={handleLogOut}>Logout</Link>
+                                }</>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
