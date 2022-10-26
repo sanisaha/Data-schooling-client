@@ -5,7 +5,7 @@ import { FaGithub, FaGoogle } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const Login = () => {
-    const { providerLogin } = useContext(AuthContext);
+    const { providerLogin, signIn } = useContext(AuthContext);
     const gitHubProvider = new GithubAuthProvider();
     const googleProvider = new GoogleAuthProvider();
     const handleGithubSignIn = () => {
@@ -22,20 +22,32 @@ const Login = () => {
             })
             .catch(error => console.error(error))
     }
+    const handleSignInWithEmail = (event) => {
+        event.preventDefault();
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        signIn(email, password)
+            .then((result) => {
+                const user = result.user;
+                form.reset();
+            })
+            .catch(e => console.error(e))
+    }
 
     return (
         <div>
             <div className="vh-100">
                 <div className="container py-5 h-100">
-                    <div className="row d-flex align-items-center justify-content-center h-100">
+                    <div className="row d-flex align-items-center justify-content-center h-100 card shadow-2-strong">
                         <div className="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
-                            <form>
+                            <form onSubmit={handleSignInWithEmail} >
                                 <div className="form-outline mb-4">
-                                    <input type="email" id="form1Example13" className="form-control form-control-lg" />
+                                    <input type="email" name='email' className="form-control form-control-lg" required />
                                     <label className="form-label" for="form1Example13">Email address</label>
                                 </div>
                                 <div className="form-outline mb-4">
-                                    <input type="password" id="form1Example23" className="form-control form-control-lg" />
+                                    <input type="password" name='password' className="form-control form-control-lg" required />
                                     <label className="form-label" for="form1Example23">Password</label>
                                 </div>
 
