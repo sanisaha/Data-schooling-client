@@ -7,9 +7,12 @@ import { Link } from 'react-router-dom';
 import './Header.css'
 import logo from '../../../assets/images/data schooling.jpg'
 import { useState } from 'react';
+import { useContext } from 'react';
+import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
 
 const Header = () => {
     const [condition, setCondition] = useState('Dark');
+    const { user } = useContext(AuthContext);
     const handleToggle = () => {
         if (condition === 'Light') {
             setCondition('Dark');
@@ -36,7 +39,23 @@ const Header = () => {
                             <Nav><Link className='text-decoration-none' onClick={handleToggle}>{condition}</Link></Nav>
 
                         </Nav>
-                        <Nav><Link className='text-decoration-none me-4 fs-4' to='/login'>Login</Link></Nav>
+                        <Nav className='text-black'>
+                            <>
+                                {
+                                    user?.uid ?
+                                        <><Image
+                                            src={user.photoURL}
+                                            roundedCircle
+                                            title={user.displayName}
+                                            style={{ height: '60px' }}
+
+                                        ></Image>
+                                        </>
+                                        :
+                                        <><Link className='text-decoration-none fs-4' to='/login'>Log In</Link></>
+                                }
+                            </>
+                        </Nav>
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
