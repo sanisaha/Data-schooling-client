@@ -4,10 +4,10 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { Link } from 'react-router-dom';
-import './Header.css'
 import logo from '../../../assets/images/data schooling.jpg'
 import { useState } from 'react';
 import { useContext } from 'react';
+import './Header.css'
 import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
 /* we used a function to toggle button for dark/light, also set condition for showing profile picture or login/logout. Set title property on profile image to displayName on image on mouseover  */
 const Header = () => {
@@ -25,13 +25,15 @@ const Header = () => {
     }
     return (
         <div >
-            <Navbar collapseOnSelect expand="lg" bg="light" variant="dark">
+            <Navbar collapseOnSelect expand="lg" bg="info" variant="dark">
                 <Container>
-                    <Image
-                        src={logo}
-                        rounded
-                        style={{ height: '40px', weight: '40px' }}
-                    ></Image>
+                    <div className='row'>
+                        <Image className='img-fluid'
+                            src={logo}
+                            rounded
+                            style={{ height: '40px', weight: '40px' }}
+                        ></Image>
+                    </div>
                     <Navbar.Brand><Link className='text-decoration-none fs-3 me-6' to='/'>DataSchooling</Link></Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
@@ -47,6 +49,7 @@ const Header = () => {
                                 {
                                     user?.uid ?
                                         <><Image
+                                            className='mobile-img'
                                             src={user.photoURL}
                                             roundedCircle
                                             title={user.displayName}

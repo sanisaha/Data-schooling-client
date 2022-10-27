@@ -1,0 +1,9 @@
+@media (max-width: 768px) {
+    .mobile-card {
+        max-width: 380px;
+    }
+
+    .pad-zero {
+        padding-left: 0;
+    }
+}

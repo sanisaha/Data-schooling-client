@@ -1,4 +1,5 @@
 import React from 'react';
+import './CourseDetailCard.css'
 import Card from 'react-bootstrap/Card';
 import { Link, useLoaderData } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
@@ -12,7 +13,7 @@ const CourseDetailCard = () => {
     const { id, name, duration, details, image, author_name } = course;
     return (
         <div>
-            <div style={{ width: '50rem' }} className='d-flex justify-content-around py-4 bg-info rounded ms-5'>
+            <div style={{ width: '50rem' }} className='d-flex justify-content-around py-4 bg-info rounded ms-5 mobile-card'>
                 <h2>Course detail Outline</h2>
                 <ReactToPdf targetRef={ref} filename="div-blue.pdf">
                     {({ toPdf }) => (
@@ -20,8 +21,8 @@ const CourseDetailCard = () => {
                     )}
                 </ReactToPdf>
             </div>
-            <div className='ps-5'>
-                <Card ref={ref} border="primary" style={{ width: '50rem' }}>
+            <div className='ps-5 pad-zero'>
+                <Card ref={ref} border="primary" className='mobile-card' style={{ width: '50rem' }}>
                     <Card.Header className='fs-3 mb-4'>{name}</Card.Header>
                     <img className='w-50 mx-auto' src={image} alt="" />
                     <div className='d-flex justify-content-around fs-5 fw-semibold mt-4'>

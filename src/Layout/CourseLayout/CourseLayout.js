@@ -12,7 +12,7 @@ const CourseLayout = () => {
             <Header></Header>
             <Container>
                 <Row className='mt-5'>
-                    <Col lg="3" className='d-none d-lg-block'>
+                    <Col lg="3" className='d-lg-block'>
                         <LeftSideNav></LeftSideNav>
                     </Col>
                     <Col lg="9">
