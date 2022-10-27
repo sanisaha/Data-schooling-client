@@ -8,7 +8,7 @@ const Checkout = () => {
     return (
         <div className='container'>
             <div className='p-5 my-3 bg-info text-center'>
-                <h2>Name {name}</h2>
+                <h2>{name}</h2>
                 <p className='fs-5'>An awesome course by our instructor <span className='text-primary fw-bold'>{author_name}</span></p>
                 <div className='p-5 text-start'>
                     <p className='fs-4'><FaCheck /> 24h customer support</p>

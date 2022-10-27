@@ -32,7 +32,7 @@ const Header = () => {
                         rounded
                         style={{ height: '40px', weight: '40px' }}
                     ></Image>
-                    <Navbar.Brand><Link className='text-decoration-none fs-3 me-6' to='/'>Data-Schooling</Link></Navbar.Brand>
+                    <Navbar.Brand><Link className='text-decoration-none fs-3 me-6' to='/'>DataSchooling</Link></Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto fs-4">

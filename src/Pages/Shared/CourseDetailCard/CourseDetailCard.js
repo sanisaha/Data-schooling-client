@@ -33,8 +33,8 @@ const CourseDetailCard = () => {
                         </Card.Text>
                     </Card.Body>
                 </Card>
-                <div className='text-center'>
-                    <Button variant="link"><Link to={`/checkout/${id}`}>Get premium access</Link></Button>
+                <div className='my-4 w-50 mx-auto'>
+                    <Button className='text-decoration-none border border-primary bg-info' variant="link"><Link className='text-decoration-none fw-semibold fs-3' to={`/checkout/${id}`}>Get premium access</Link></Button>
                 </div>
             </div>
         </div>

@@ -1,7 +1,10 @@
 import React from 'react';
 import { FaBug } from 'react-icons/fa';
+import { useRouteError } from 'react-router-dom';
 
 const Error = () => {
+    let error = useRouteError();
+    console.error(error);
     return (
         <div className='text-center text-3xl my-10'>
             <h1 className='p-5'><FaBug className='text-end px-2' />404</h1>

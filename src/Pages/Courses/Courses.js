@@ -12,7 +12,6 @@ const Courses = () => {
     }, [])
     return (
         <div>
-            <h2>This is course {courses.length}</h2>
             <Row xs={1} md={1} className="g-4">
                 {courses.map(course => <CourseCard
                     key={course.id}

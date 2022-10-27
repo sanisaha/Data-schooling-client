@@ -10,7 +10,7 @@ const CourseLayout = () => {
         <div>
             <Header></Header>
             <Container>
-                <Row>
+                <Row className='mt-5'>
                     <Col lg="3" className='d-none d-lg-block'>
                         <LeftSideNav></LeftSideNav>
                     </Col>

@@ -5,6 +5,7 @@ import Register from '../../Credentials/Register';
 import CourseLayout from '../../Layout/CourseLayout/CourseLayout';
 import Main from '../../Layout/Main/Main';
 import Error from '../../Other/Error/Error';
+import ErrorBoundary from '../../Other/ErrorBoundary/ErrorBoundary';
 import Blog from '../../Pages/Blog/Blog';
 import Courses from '../../Pages/Courses/Courses';
 import FAQ from '../../Pages/FAQ/FAQ';
@@ -60,6 +61,8 @@ export const routes = createBrowserRouter([
                 path: '/courses/:id',
                 element: <CourseDetailCard></CourseDetailCard>,
                 loader: ({ params }) => fetch(`http://localhost:5000/courses/${params.id}`)
+
+
             }
         ]
     },
