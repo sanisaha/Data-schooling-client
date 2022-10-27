@@ -50,11 +50,11 @@ const Login = () => {
                             <form onSubmit={handleSignInWithEmail} >
                                 <div className="form-outline mb-4">
                                     <input type="email" name='email' className="form-control form-control-lg" required />
-                                    <label className="form-label" for="form1Example13">Email address</label>
+                                    <label className="form-label" htmlFor="form1Example13">Email address</label>
                                 </div>
                                 <div className="form-outline mb-4">
                                     <input type="password" name='password' className="form-control form-control-lg" required />
-                                    <label className="form-label" for="form1Example23">Password</label>
+                                    <label className="form-label" htmlFor="form1Example23">Password</label>
                                 </div>
 
                                 <button type="submit" className="btn btn-primary btn-lg btn-block">Sign in</button>

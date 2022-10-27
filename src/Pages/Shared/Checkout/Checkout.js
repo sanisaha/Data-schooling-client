@@ -4,7 +4,6 @@ import { useLoaderData } from 'react-router-dom';
 
 const Checkout = () => {
     const course = useLoaderData();
-    console.log(course);
     const { name, duration, author_name } = course;
     return (
         <div className='container'>
