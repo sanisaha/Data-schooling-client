@@ -5,7 +5,7 @@ import Button from 'react-bootstrap/Button';
 
 const CourseDetailCard = () => {
     const course = useLoaderData();
-    const { name, duration, details, image, author_name } = course;
+    const { id, name, duration, details, image, author_name } = course;
     return (
         <div>
             <Card border="primary" style={{ width: '60rem' }}>
@@ -22,7 +22,7 @@ const CourseDetailCard = () => {
                     </Card.Text>
                 </Card.Body>
                 <div className='text-center'>
-                    <Button variant="link"><Link>Get premium access</Link></Button>
+                    <Button variant="link"><Link to={`/checkout/${id}`}>Get premium access</Link></Button>
                 </div>
 
             </Card>

@@ -9,7 +9,9 @@ import Blog from '../../Pages/Blog/Blog';
 import Courses from '../../Pages/Courses/Courses';
 import FAQ from '../../Pages/FAQ/FAQ';
 import Home from '../../Pages/Home/Home';
+import Checkout from '../../Pages/Shared/Checkout/Checkout';
 import CourseDetailCard from '../../Pages/Shared/CourseDetailCard/CourseDetailCard';
+import PrivateRoute from '../PrivateRoute/PrivateRoute';
 
 export const routes = createBrowserRouter([
     {
@@ -37,6 +39,11 @@ export const routes = createBrowserRouter([
             {
                 path: '/register',
                 element: <Register></Register>
+            },
+            {
+                path: '/checkout/:id',
+                element: <PrivateRoute><Checkout></Checkout></PrivateRoute>,
+                loader: ({ params }) => fetch(`http://localhost:5000/checkout/${params.id}`)
             }
         ]
     },
@@ -54,6 +61,9 @@ export const routes = createBrowserRouter([
                 element: <CourseDetailCard></CourseDetailCard>,
                 loader: ({ params }) => fetch(`http://localhost:5000/courses/${params.id}`)
             }
+
+
         ]
     }
+
 ]);
