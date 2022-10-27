@@ -3,9 +3,11 @@ import React, { useContext } from 'react';
 import { AuthContext } from '../Context/AuthProvider/AuthProvider';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 
 const Login = () => {
     const { providerLogin, signIn } = useContext(AuthContext);
+    const [error, setError] = useState(null);
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
     const gitHubProvider = new GithubAuthProvider();
@@ -38,7 +40,10 @@ const Login = () => {
                 form.reset();
                 navigate(from, { replace: true });
             })
-            .catch(e => console.error(e))
+            .catch(e => {
+                console.error(e)
+                setError(e.message)
+            })
     }
 
     return (
@@ -56,6 +61,7 @@ const Login = () => {
                                     <input type="password" name='password' className="form-control form-control-lg" required />
                                     <label className="form-label" htmlFor="form1Example23">Password</label>
                                 </div>
+                                <p className='text-danger'>{error}</p>
 
                                 <button type="submit" className="btn btn-primary btn-lg btn-block">Sign in</button>
 
