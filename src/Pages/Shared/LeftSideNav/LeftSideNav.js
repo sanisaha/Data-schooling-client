@@ -2,6 +2,7 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+/* useEffect used because data was fetching from outside */
 
 const LeftSideNav = () => {
     const [courses, setCourses] = useState([]);

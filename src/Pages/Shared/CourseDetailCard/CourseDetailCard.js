@@ -4,6 +4,8 @@ import { Link, useLoaderData } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import ReactToPdf from 'react-to-pdf'
 
+/* here we used ReactToPdf from react to pdf package for generating pdf of the react page 
+the ref property used for which element to be download*/
 const ref = React.createRef();
 const CourseDetailCard = () => {
     const course = useLoaderData();

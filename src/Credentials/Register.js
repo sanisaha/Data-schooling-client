@@ -22,6 +22,7 @@ const Register = () => {
             })
             .catch(e => console.error(e))
     }
+    /*here user information get from the registration form and update through this function */
     const handleUserProfile = (name, photoURL) => {
         const profile = { displayName: name, photoURL: photoURL }
         updateUserProfile(profile)

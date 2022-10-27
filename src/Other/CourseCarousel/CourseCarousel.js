@@ -1,7 +1,7 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
-
+/* here for home page we set some course details based on basic category, from courses we applied filter for basic category, then we applied find and got specific course */
 const CourseCarousel = ({ basicCourse }) => {
     const { id, image, name, duration } = basicCourse;
     return (

@@ -10,6 +10,7 @@ const auth = getAuth(app);
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
+    /*Auth for user signIn with google and github, email and password(createuser,signin,logout)*/
     const providerLogin = (provider) => {
         return signInWithPopup(auth, provider);
     }

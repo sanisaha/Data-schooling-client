@@ -9,7 +9,7 @@ import logo from '../../../assets/images/data schooling.jpg'
 import { useState } from 'react';
 import { useContext } from 'react';
 import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
-
+/* we used a function to toggle button for dark/light, also set condition for showing profile picture or login/logout. Set title property on profile image to displayName on image on mouseover  */
 const Header = () => {
     const [condition, setCondition] = useState('Dark');
     const { user, logOut } = useContext(AuthContext);
