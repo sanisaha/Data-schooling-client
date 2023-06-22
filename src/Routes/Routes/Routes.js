@@ -21,7 +21,7 @@ export const routes = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
-                loader: () => fetch('http://localhost:5000/courses')
+                loader: () => fetch('https://data-schooling-server.vercel.app/courses')
             },
 
             {
@@ -43,7 +43,7 @@ export const routes = createBrowserRouter([
             {
                 path: '/checkout/:id',
                 element: <PrivateRoute><Checkout></Checkout></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/checkout/${params.id}`)
+                loader: ({ params }) => fetch(`https://data-schooling-server.vercel.app/checkout/${params.id}`)
             }
         ]
     },
@@ -54,12 +54,12 @@ export const routes = createBrowserRouter([
             {
                 path: '/courses',
                 element: <Courses></Courses>,
-                Loader: () => fetch('http://localhost:5000/courses')
+                Loader: () => fetch('https://data-schooling-server.vercel.app/courses')
             },
             {
                 path: '/courses/:id',
                 element: <CourseDetailCard></CourseDetailCard>,
-                loader: ({ params }) => fetch(`http://localhost:5000/courses/${params.id}`)
+                loader: ({ params }) => fetch(`https://data-schooling-server.vercel.app/courses/${params.id}`)
 
 
             }
